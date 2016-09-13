@@ -1,3 +1,10 @@
+body{
+  width: 100%;
+  padding: 25px;
+}
+.priceMargin{
+  margin-left: 1rem;
+}
 table {
     border-spacing: 3px 5px;
     border-collapse: collapse;

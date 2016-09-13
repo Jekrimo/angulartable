@@ -8,6 +8,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sortable Table with Static Headers</title>
 
     <!--Framework Imports-->
@@ -23,15 +24,15 @@
 </head>
 
 <body ng-app="SortableTable">
-
-    <div ng-controller="sortableTableController">
-        <div id="tableHead">
-            <table>
-                <thead>
-                    <tr>
-                        <th id="name">
-                            Name
-                            <span ng-hide="name.asc">
+    <div id="container">
+        <div ng-controller="sortableTableController">
+            <div id="tableHead">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="name">
+                                Name
+                                <span ng-hide="name.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('name')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
@@ -39,7 +40,7 @@
                                         </svg>
                                     </button>
                                 </span>
-                            <span ng-hide="!name.asc">
+                                <span ng-hide="!name.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('name')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
@@ -47,10 +48,10 @@
                                         </svg>
                                     </button>
                                 </span>
-                        </th>
-                        <th id="type">
-                            Food Group
-                            <span ng-hide="type.asc">
+                            </th>
+                            <th id="type">
+                                Food Group
+                                <span ng-hide="type.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('type')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
@@ -58,7 +59,7 @@
                                         </svg>
                                     </button>
                                 </span>
-                            <span ng-hide="!type.asc">
+                                <span ng-hide="!type.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('type')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
@@ -66,10 +67,10 @@
                                         </svg>
                                     </button>
                                 </span>
-                        </th>
-                        <th id="price">
-                            Price per unit
-                            <span ng-hide="price.asc">
+                            </th>
+                            <th id="price">
+                                Price per unit
+                                <span ng-hide="price.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('price')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
@@ -77,7 +78,7 @@
                                         </svg>
                                     </button>
                                 </span>
-                            <span ng-hide="!price.asc">
+                                <span ng-hide="!price.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('price')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
@@ -85,10 +86,10 @@
                                         </svg>
                                     </button>
                                 </span>
-                        </th>
-                        <th id="unit">
-                            Unit
-                            <span ng-hide="unit.asc">
+                            </th>
+                            <th id="unit">
+                                Unit
+                                <span ng-hide="unit.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('unit')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
@@ -96,7 +97,7 @@
                                         </svg>
                                     </button>
                                 </span>
-                            <span ng-hide="!unit.asc">
+                                <span ng-hide="!unit.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('unit')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
@@ -104,10 +105,10 @@
                                         </svg>
                                     </button>
                                 </span>
-                        </th>
-                        <th id="stock">
-                            In Stock
-                            <span ng-hide="stock.asc">
+                            </th>
+                            <th id="stock">
+                                In Stock
+                                <span ng-hide="stock.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('stock')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
@@ -115,7 +116,7 @@
                                         </svg>
                                     </button>
                                 </span>
-                            <span ng-hide="!stock.asc">
+                                <span ng-hide="!stock.asc">
                                     <button class="arrowButton" ng-click="sortByHeader('stock')">
                                         <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
@@ -123,26 +124,26 @@
                                         </svg>
                                     </button>
                                 </span>
-                        </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <div id="tableBody">
-            <table>
-                <tbody>
-                    <tr ng-repeat="food in foodArray | orderBy: predicate: sortDir" ng-class="{out: food.stock === 0}">
-                        <td>{{food.name}}</td>
-                        <td>{{food.type}}</td>
-                        <td><input type= "text" name="nPrice" value="{{food.price}}"><input type="button" ng-click="updatePrice({{food.name}} ,nPrice)" value="update"></td>
-                        <td>{{food.unit}}</td>
-                        <td>{{food.stock}}</td>
-                    </tr>
-                </tbody>
-            </table>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="tableBody">
+                <table>
+                    <tbody>
+                        <tr ng-repeat="food in foodArray | orderBy: predicate: sortDir" ng-class="{out: food.stock === 0}">
+                            <td>{{food.name}}</td>
+                            <td>{{food.type}}</td>
+                            <td>$ {{food.price}}<input class="priceMargin" type="text" ng-model="nPrice"><input type="button" ng-click="updatePrice(food.name ,nPrice)" value="update"></td>
+                            <td>{{food.unit}}</td>
+                            <td>{{food.stock}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>
