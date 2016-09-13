@@ -5,7 +5,7 @@ sortableTable.controller("sortableTableController", sortableTableController);
 sortableTableController.$inject = ["$scope"];
 
 function sortableTableController($scope) {
-    
+
     $scope.foodArray = [
         {name: "banana", type: "fruit", price: "$1.00", unit: "bundle", stock: 2, demand: 4, need: 2},
         {name: "hamburger", type: "meat", price: "$3.99", unit: "pound", stock: 1, demand: 7, need: 6},
@@ -30,38 +30,47 @@ function sortableTableController($scope) {
         {name: "spahgetti noodles", type: "grain", price: "$0.99", unit: "pound", stock: 0, demand: 2, need: 2},
         {name: "tortillas", type: "grain", price: "$1.99", unit: "pound", stock: 0, demand: 2, need: 2}
     ];
-    
+
     $scope.foodGroups = ["fruit", "vegetable", "meat", "dairy", "grain", "caffeine"];
+
     $scope.name = {asc: true};
     $scope.type = {asc: true};
     $scope.price = {asc: true};
     $scope.unit = {asc: true};
     $scope.stock = {asc: true};
-    
+
     $scope.predicate = "type";
-    
+
+    $scope.sortDir = true;
+
     $scope.order = function(predicate) {
         $scope.predicate = predicate;
     };
-    
+
     $scope.sortByHeader = function(headerName) {
         switch (headerName) {
             case "name":
                 $scope.name.asc = !$scope.name.asc;
+                $scope.sortDir = !$scope.sortDir;
                 break;
             case "type":
                 $scope.type.asc = !$scope.type.asc;
+                $scope.sortDir = !$scope.sortDir;
                 break;
             case "price":
                 $scope.price.asc = !$scope.price.asc;
+                $scope.sortDir = !$scope.sortDir;
                 break;
             case "unit":
                 $scope.unit.asc = !$scope.unit.asc;
+                $scope.sortDir = !$scope.sortDir;
                 break;
             case "stock":
                 $scope.stock.asc = !$scope.stock.asc;
+                $scope.sortDir = !$scope.sortDir;
                 break;
         }
         $scope.order(headerName);
     };
+
 }
