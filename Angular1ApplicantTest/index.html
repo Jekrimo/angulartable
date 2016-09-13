@@ -125,7 +125,47 @@
                                     </button>
                                 </span>
                             </th>
-                        </tr>
+
+                        <th id="demand">
+                            Demand
+                            <span ng-hide="demand.asc">
+                                <button class="arrowButton" ng-click="sortByHeader('demand')">
+                                    <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+                                        <path d="M0 0h24v24H0z" fill="none"/>
+                                    </svg>
+                                </button>
+                            </span>
+                            <span ng-hide="!demand.asc">
+                                <button class="arrowButton" ng-click="sortByHeader('demand')">
+                                    <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                        <path d="M0-.75h24v24H0z" fill="none"/>
+                                    </svg>
+                                </button>
+                            </span>
+                        </th>
+
+                    <th id="need">
+                        Need
+                        <span ng-hide="need.asc">
+                            <button class="arrowButton" ng-click="sortByHeader('need')">
+                                <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+                                    <path d="M0 0h24v24H0z" fill="none"/>
+                                </svg>
+                            </button>
+                        </span>
+                        <span ng-hide="!need.asc">
+                            <button class="arrowButton" ng-click="sortByHeader('need')">
+                                <svg fill="#f44336" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                    <path d="M0-.75h24v24H0z" fill="none"/>
+                                </svg>
+                            </button>
+                        </span>
+                    </th>
+                </tr>
                     </thead>
                 </table>
             </div>
@@ -135,9 +175,11 @@
                         <tr ng-repeat="food in foodArray | orderBy: predicate: sortDir" ng-class="{out: food.stock === 0}">
                             <td>{{food.name}}</td>
                             <td>{{food.type}}</td>
-                            <td>$ {{food.price}}<input class="priceMargin" type="text" ng-model="nPrice"><input type="button" ng-click="updatePrice(food.name ,nPrice)" value="update"></td>
+                            <td>$ {{food.price}}<input class="priceMargin"  type="text" ng-model="nPrice"><input type="button"  ng-click="updatePrice(food.name ,nPrice)" value="update"></td>
                             <td>{{food.unit}}</td>
                             <td>{{food.stock}}</td>
+                            <td>{{food.demand}}</td>
+                            <td>{{food.need}}</td>
                         </tr>
                     </tbody>
                 </table>

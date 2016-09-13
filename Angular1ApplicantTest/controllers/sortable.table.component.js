@@ -186,15 +186,14 @@ function sortableTableController($scope) {
     // Took out foodGroups, Milk can not be vegetable
 
     // $scope.foodGroups = ["fruit", "vegetable", "meat", "dairy", "grain", "caffeine"];
-
     // update Prices in table
     $scope.updatePrice = function(item, nPrice) {
         var foods = $scope.foodArray;
         for (var i = 0; i < foods.length; i++) {
             if (foods[i].name === item) {
-                $scope.foodArray[i].price = nPrice;
-                return $scope.updatePrice();
-                break;
+              // can not get this to stay updated!
+                $scope.foodArray[i].price = parseFloat(nPrice);
+                $scope.apply();
             }
         }
     };
@@ -212,11 +211,17 @@ function sortableTableController($scope) {
     };
     $scope.price = {
         asc: true
-    }, parseFloat($scope.price);
+    };
     $scope.unit = {
         asc: true
     };
     $scope.stock = {
+        asc: true
+    };
+    $scope.demand = {
+        asc: true
+    };
+    $scope.need = {
         asc: true
     };
 
@@ -230,7 +235,8 @@ function sortableTableController($scope) {
     };
 
     // I feel like this could be so much better but everything I tried
-    // completely broke the arrow imgs;
+    // completely broke the arrow imgs
+
     $scope.sortByHeader = function(headerName) {
         switch (headerName) {
             case "name":
@@ -251,6 +257,14 @@ function sortableTableController($scope) {
                 break;
             case "stock":
                 $scope.stock.asc = !$scope.stock.asc;
+                $scope.sortDir = !$scope.sortDir;
+                break;
+            case "demand":
+                $scope.demand.asc = !$scope.demand.asc;
+                $scope.sortDir = !$scope.sortDir;
+                break;
+            case "need":
+                $scope.need.asc = !$scope.need.asc;
                 $scope.sortDir = !$scope.sortDir;
                 break;
         }
