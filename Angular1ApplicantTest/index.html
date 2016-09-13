@@ -134,7 +134,7 @@
                     <tr ng-repeat="food in foodArray | orderBy: predicate: sortDir" ng-class="{out: food.stock === 0}">
                         <td>{{food.name}}</td>
                         <td>{{food.type}}</td>
-                        <td>{{food.price}}</td>
+                        <td><input type= "text" name="nPrice" value="{{food.price}}"><input type="button" ng-click="updatePrice({{food.name}} ,nPrice)" value="update"></td>
                         <td>{{food.unit}}</td>
                         <td>{{food.stock}}</td>
                     </tr>

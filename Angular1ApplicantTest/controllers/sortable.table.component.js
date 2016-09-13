@@ -30,9 +30,18 @@ function sortableTableController($scope) {
         {name: "spahgetti noodles", type: "grain", price: "$0.99", unit: "pound", stock: 0, demand: 2, need: 2},
         {name: "tortillas", type: "grain", price: "$1.99", unit: "pound", stock: 0, demand: 2, need: 2}
     ];
+    // Took out foodGroups, Milk can not be vegetable
+    // $scope.foodGroups = ["fruit", "vegetable", "meat", "dairy", "grain", "caffeine"];
 
-    $scope.foodGroups = ["fruit", "vegetable", "meat", "dairy", "grain", "caffeine"];
-
+    // update Prices in table
+    $scope.updatePrice = function(item, newPrice) {
+      var foods= $scope.foodArray;
+    	 for(var i =0; i < foods.length; i++){
+         if(foods[i].name === item){
+           $scope.foodArray[i].price = newPrice;
+         }
+       }
+    };
     $scope.name = {asc: true};
     $scope.type = {asc: true};
     $scope.price = {asc: true};
@@ -41,6 +50,7 @@ function sortableTableController($scope) {
 
     $scope.predicate = "type";
 
+    // Added to make table toggle desc and asc
     $scope.sortDir = true;
 
     $scope.order = function(predicate) {
